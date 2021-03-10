@@ -1,4 +1,8 @@
 import React from "react";
+import "./Cart.css";
+//import fontawesome icons//
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Cart = (props) => {
   const cart = props.cart;
@@ -40,19 +44,29 @@ const Cart = (props) => {
 
   return (
     <div className="cart-container">
-      <h3>Order Summary</h3>
-      <h4>Items Ordered : {cart.length}</h4>
+      <h2 style={{ textAlign: "center" }}>Order Summary</h2>
+      <h4 style={{ textAlign: "center" }}>Items Ordered : {cart.length}</h4>
       <p>
-        <small>Shipping & Handling : {formatNumber(shipping)} </small>
+        <small>Shipping & Handling : ${formatNumber(shipping)} </small>
       </p>
       <p>
         {" "}
-        <small>Total Before Tax : {formatNumber(total)}</small>{" "}
+        <small>Total Before Tax : ${formatNumber(total)}</small>{" "}
       </p>
       <p>
-        <small>Estimated Tax : {formatNumber(tax)}</small>
+        <small>Estimated Tax : ${formatNumber(tax)}</small>
       </p>
-      <h3>Order Total : {formatNumber(grandTotal)}</h3>
+      <h3 style={{ color: "#be3447" }}>
+        Order Total : ${formatNumber(grandTotal)}
+      </h3>
+      <button
+        style={{ marginLeft: "6%" }}
+        // onClick={() => props.handleAddProduct(props.product)}
+        className="main-btn"
+      >
+        <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
+        Review Order
+      </button>
     </div>
   );
 };
