@@ -11,7 +11,7 @@ const Cart = (props) => {
   let total = 0;
   for (let i = 0; i < cart.length; i++) {
     const product = cart[i];
-    total = total + product.price;
+    total = total + product.price * product.quantity;
   }
 
   // function for precise calculation //
@@ -59,14 +59,8 @@ const Cart = (props) => {
       <h3 style={{ color: "#be3447" }}>
         Order Total : ${formatNumber(grandTotal)}
       </h3>
-      <button
-        style={{ marginLeft: "6%" }}
-        // onClick={() => props.handleAddProduct(props.product)}
-        className="main-btn"
-      >
-        <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
-        Review Order
-      </button>
+      {/* for accessing the button itself */}
+      {props.children}
     </div>
   );
 };

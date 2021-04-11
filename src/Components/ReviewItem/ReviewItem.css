@@ -1,0 +1,13 @@
+.flex-container{
+    display: flex;
+}
+.review-item-container{
+    margin-left: 150px;
+    border-bottom: 1px solid lightgray ;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.price-name{
+    color: rgb(190, 52, 71);
+    font-weight: 700;
+}
